@@ -1,0 +1,36 @@
+{
+  "name": "internet-speed-recorder",
+  "version": "1.0.0",
+  "description": "Uses a headless browser to navigate to speedtest.net, run a speed test, and save a screenshot of the result",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "lint": "eslint .",
+    "prettier": "prettier --write **/*.{js,json,md}"
+  },
+  "author": "eric121492@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^5.3.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,json,md}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
